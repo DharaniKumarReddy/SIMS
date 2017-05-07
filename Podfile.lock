@@ -1,0 +1,15 @@
+PODS:
+  - ECSlidingViewController (2.0.3)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - ECSlidingViewController (~> 2.0.3)
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  ECSlidingViewController: 6485c14f23b4487e9946535421ca8f111f86cc53
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: d63f4f7eaefd718b7dbd699e0bc3902e0fe4cb08
+
+COCOAPODS: 1.2.1

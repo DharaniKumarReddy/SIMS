@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dHV-v2-fzh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dashboard View Controller-->
+        <scene sceneID="97b-vW-KRe">
+            <objects>
+                <viewController id="dHV-v2-fzh" customClass="DashboardViewController" customModule="SIMS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yOe-zZ-FTE"/>
+                        <viewControllerLayoutGuide type="bottom" id="ER4-z7-KpN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gP5-XN-5cX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQ5-WV-O6k">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="7Q6-TX-6sF"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.0" green="0.0" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Ambulance Booking" id="clX-2Q-Vmv">
+                                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="64Y-53-KE3">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iQ5-WV-O6k" secondAttribute="trailing" id="UHD-9N-skl"/>
+                            <constraint firstItem="iQ5-WV-O6k" firstAttribute="top" secondItem="gP5-XN-5cX" secondAttribute="top" id="WuU-Q4-3zH"/>
+                            <constraint firstItem="iQ5-WV-O6k" firstAttribute="leading" secondItem="gP5-XN-5cX" secondAttribute="leading" id="YWF-uw-hFh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fGo-Qs-TDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7" y="243"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hamburger" width="20" height="20"/>
+    </resources>
+</document>
