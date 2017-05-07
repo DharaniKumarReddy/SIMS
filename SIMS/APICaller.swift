@@ -8,10 +8,13 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 typealias JSONDictionary = [String : AnyObject]
 typealias OnSuccessResponse = (String) -> Void
 typealias OnErrorMessage = (String) -> Void
+
+typealias OnUserResponse = (Member) -> Void
 
 private enum RequestMethod: String, CustomStringConvertible {
     case GET = "GET"
@@ -71,7 +74,9 @@ class APICaller {
             
         }
         
-        if let params = params {
+        
+        if var params = params {
+            params["cmd"] = route.cmd as AnyObject
             switch requestMethod {
             case .GET, .DELETE:
                 var queryItems: [URLQueryItem] = []
@@ -118,7 +123,7 @@ class APICaller {
                 }
             }
         }
-        
+        print(request)
         return request as URLRequest
     }
     
@@ -135,6 +140,10 @@ class APICaller {
                     statusCode = 450
                 }
                 print(responseString)
+                let json = JSON(parseJSON: responseString)
+                if json["mydata"] == "" {
+                    statusCode = 400
+                }
                 switch statusCode {
                 case 200...299:
                     // Success Response
@@ -149,7 +158,7 @@ class APICaller {
                 default:
                     // Failure Response
                     
-                    let errorMessage = "Error Code: \(statusCode)"
+                    let errorMessage = "Some thing went wrong. Please try again"
                     onErrorMessage(errorMessage)
                 }
                 
@@ -178,5 +187,19 @@ class APICaller {
         }) 
         
         dataTask.resume()
+    }
+    
+    func logIn(emailOrMobile id: String?, password: String?, onUserResponse: @escaping OnUserResponse, onError: @escaping OnErrorMessage) {
+        let jsonDict: JSONDictionary = ["emailormobile" : id as AnyObject, "password" : password as AnyObject]
+        enqueueRequest(
+            .GET,
+            .login,
+            params: jsonDict,
+            onSuccessResponse: { response in
+                let member = JsonParser.parseMemberInfo(jsonString: response)
+                 onUserResponse(member)
+            }, onErrorMessage: { errorMessage in
+                onError(errorMessage)
+        })
     }
 }

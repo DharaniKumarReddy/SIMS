@@ -8,10 +8,14 @@
 
 import UIKit
 import SlideMenuControllerSwift
+import MBProgressHUD
 
 let Login_Placeholders = ["Email / Mobile No" , "Password"]
 
 class LoginTableViewController: UITableViewController {
+    
+    var idTextField: UITextField?
+    var passwordTextField: UITextField?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +42,9 @@ class LoginTableViewController: UITableViewController {
             cell.titleLabel.text = Login_Placeholders[indexPath.row]
             if indexPath.row == 0 {
                 cell.textField.becomeFirstResponder()
+                idTextField = cell.textField
+            } else {
+                passwordTextField = cell.textField
             }
             return cell
         case 4:
@@ -53,7 +60,16 @@ class LoginTableViewController: UITableViewController {
     
     @IBAction private func actionButtonTapped(button: UIButton) {
         if button.tag == 2 {
-            logIn()
+            showHUDWithText(text: "Please wait")
+            APICaller.getInstance().logIn(
+                emailOrMobile: idTextField?.text,
+                password: passwordTextField?.text,
+                onUserResponse: { member in
+                    self.logIn()
+            }, onError: { message in
+                self.hideHUDWithText(text: message)
+            })
+            //logIn()
         } else {
             
         }

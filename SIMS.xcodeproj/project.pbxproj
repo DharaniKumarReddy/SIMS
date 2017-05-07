@@ -26,6 +26,8 @@
 		9FFAE2D11EBF667700B69501 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE2D01EBF667700B69501 /* Route.swift */; };
 		9FFAE2D31EBF6B3800B69501 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE2D21EBF6B3800B69501 /* APICaller.swift */; };
 		9FFAE2D51EBF73D600B69501 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE2D41EBF73D600B69501 /* UIApplicationExtension.swift */; };
+		9FFAE2D71EBF817D00B69501 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE2D61EBF817D00B69501 /* JsonParser.swift */; };
+		9FFAE2DA1EBF81D100B69501 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE2D91EBF81D100B69501 /* Member.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		9FFAE2D01EBF667700B69501 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		9FFAE2D21EBF6B3800B69501 /* APICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		9FFAE2D41EBF73D600B69501 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		9FFAE2D61EBF817D00B69501 /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
+		9FFAE2D91EBF81D100B69501 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Member.swift; path = Models/Member.swift; sourceTree = "<group>"; };
 		ABB3C461EFFB8C554B871675 /* Pods-SIMS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SIMS/Pods-SIMS.debug.xcconfig"; sourceTree = "<group>"; };
 		ADD66A4BC578177BDD22764D /* Pods_SIMSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9AAD83912E6E9237BE307C /* Pods-SIMSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SIMSTests/Pods-SIMSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		9FFAE2931EBEBCED00B69501 /* SIMS */ = {
 			isa = PBXGroup;
 			children = (
+				9FFAE2D81EBF819900B69501 /* Models */,
 				9FFAE2941EBEBCED00B69501 /* AppDelegate.swift */,
 				9FFAE2981EBEBCED00B69501 /* Main.storyboard */,
 				9FFAE2C21EBEC11600B69501 /* LoginTableViewController.swift */,
@@ -167,9 +172,10 @@
 				9FFAE29D1EBEBCED00B69501 /* LaunchScreen.storyboard */,
 				9FFAE2A01EBEBCED00B69501 /* Info.plist */,
 				9FFAE2CE1EBF5F0500B69501 /* ViewControllerExtension.swift */,
+				9FFAE2D41EBF73D600B69501 /* UIApplicationExtension.swift */,
 				9FFAE2D01EBF667700B69501 /* Route.swift */,
 				9FFAE2D21EBF6B3800B69501 /* APICaller.swift */,
-				9FFAE2D41EBF73D600B69501 /* UIApplicationExtension.swift */,
+				9FFAE2D61EBF817D00B69501 /* JsonParser.swift */,
 			);
 			path = SIMS;
 			sourceTree = "<group>";
@@ -190,6 +196,14 @@
 				9FFAE2B61EBEBCEE00B69501 /* Info.plist */,
 			);
 			path = SIMSUITests;
+			sourceTree = "<group>";
+		};
+		9FFAE2D81EBF819900B69501 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9FFAE2D91EBF81D100B69501 /* Member.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,8 +495,10 @@
 				9FFAE2C91EBF357100B69501 /* DashboardViewController.swift in Sources */,
 				9FFAE2D31EBF6B3800B69501 /* APICaller.swift in Sources */,
 				9FFAE2CD1EBF516D00B69501 /* CheckOTPTableViewController.swift in Sources */,
+				9FFAE2DA1EBF81D100B69501 /* Member.swift in Sources */,
 				9FFAE2D11EBF667700B69501 /* Route.swift in Sources */,
 				9FFAE2C51EBF05F400B69501 /* RegistrationTableViewController.swift in Sources */,
+				9FFAE2D71EBF817D00B69501 /* JsonParser.swift in Sources */,
 				9FFAE2C31EBEC11600B69501 /* LoginTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
