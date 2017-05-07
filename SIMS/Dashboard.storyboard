@@ -12,7 +12,7 @@
         <!--Dashboard View Controller-->
         <scene sceneID="97b-vW-KRe">
             <objects>
-                <viewController id="dHV-v2-fzh" customClass="DashboardViewController" customModule="SIMS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardViewController" id="dHV-v2-fzh" customClass="DashboardViewController" customModule="SIMS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yOe-zZ-FTE"/>
                         <viewControllerLayoutGuide type="bottom" id="ER4-z7-KpN"/>
@@ -35,6 +35,9 @@
                                     <navigationItem title="Ambulance Booking" id="clX-2Q-Vmv">
                                         <barButtonItem key="leftBarButtonItem" image="hamburger" id="64Y-53-KE3">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="leftBarButtonTapped" destination="dHV-v2-fzh" id="Tr3-ux-jwh"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -51,6 +54,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGo-Qs-TDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7" y="243"/>
+        </scene>
+        <!--Left Menu View Controller-->
+        <scene sceneID="knX-SS-xnc">
+            <objects>
+                <viewController storyboardIdentifier="LeftMenuViewController" id="xlp-Zv-pR8" customClass="LeftMenuViewController" customModule="SIMS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WnW-ia-AsC"/>
+                        <viewControllerLayoutGuide type="bottom" id="cP0-6R-Y3n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qAx-Fb-hHn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vhm-uY-3YL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="707" y="253"/>
         </scene>
     </scenes>
     <resources>

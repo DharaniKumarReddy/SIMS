@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
 let Login_Placeholders = ["Email / Mobile No" , "Password"]
 
@@ -53,13 +54,23 @@ class LoginTableViewController: UITableViewController {
     @IBAction private func actionButtonTapped(button: UIButton) {
         switch button.tag {
         case 2:
-            let dashboard = UIStoryboard(name: "Dashboard", bundle: Bundle.main).instantiateInitialViewController() as! DashboardViewController
-            navigationController?.pushViewController(dashboard, animated: true)
+            logIn()
         case 3:
             break
         default:
             break
         }
+    }
+    
+    private func logIn() {
+        let defaults = UserDefaults.standard
+        defaults.set(true, forKey: Keys.LogIn)
+        let dashboard = UIStoryboard(name: "Dashboard", bundle: Bundle.main).instantiateInitialViewController() as! DashboardViewController
+        let leftViewController = UIStoryboard(name: "Dashboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "LeftMenuViewController") as! LeftMenuViewController
+        let slidingViewController = SlideMenuController(mainViewController: dashboard, leftMenuViewController: leftViewController)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = slidingViewController
+        appDelegate.window?.makeKeyAndVisible()
     }
 
 }

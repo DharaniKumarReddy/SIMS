@@ -1,15 +1,15 @@
 PODS:
-  - ECSlidingViewController (2.0.3)
+  - SlideMenuControllerSwift (3.0.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - ECSlidingViewController (~> 2.0.3)
+  - SlideMenuControllerSwift
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  ECSlidingViewController: 6485c14f23b4487e9946535421ca8f111f86cc53
+  SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: d63f4f7eaefd718b7dbd699e0bc3902e0fe4cb08
+PODFILE CHECKSUM: f4ff1f1124991a4ba8e1ee68df2c761ca4b42438
 
 COCOAPODS: 1.2.1

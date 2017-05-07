@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
 class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //addLeftBarButtonWithImage(UIImage(named: "hamburger") ?? UIImage())
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction private func leftBarButtonTapped() {
+       self.toggleLeft()
     }
 
 }

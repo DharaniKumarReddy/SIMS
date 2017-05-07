@@ -11,7 +11,6 @@
 		610674B138D0659A1449E2D3 /* Pods_SIMS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362903B7AF84DD3A528AD6F3 /* Pods_SIMS.framework */; };
 		890953766088D321F6BA64D8 /* Pods_SIMSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD66A4BC578177BDD22764D /* Pods_SIMSTests.framework */; };
 		9FFAE2951EBEBCED00B69501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE2941EBEBCED00B69501 /* AppDelegate.swift */; };
-		9FFAE2971EBEBCED00B69501 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE2961EBEBCED00B69501 /* ViewController.swift */; };
 		9FFAE29A1EBEBCED00B69501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFAE2981EBEBCED00B69501 /* Main.storyboard */; };
 		9FFAE29C1EBEBCED00B69501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FFAE29B1EBEBCED00B69501 /* Assets.xcassets */; };
 		9FFAE29F1EBEBCED00B69501 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFAE29D1EBEBCED00B69501 /* LaunchScreen.storyboard */; };
@@ -21,6 +20,7 @@
 		9FFAE2C51EBF05F400B69501 /* RegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE2C41EBF05F400B69501 /* RegistrationTableViewController.swift */; };
 		9FFAE2C71EBF340000B69501 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFAE2C61EBF340000B69501 /* Dashboard.storyboard */; };
 		9FFAE2C91EBF357100B69501 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE2C81EBF357100B69501 /* DashboardViewController.swift */; };
+		9FFAE2CB1EBF3ABD00B69501 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE2CA1EBF3ABD00B69501 /* LeftMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 		44456AEA7432E2195057F973 /* Pods-SIMSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SIMSTests/Pods-SIMSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9FFAE2911EBEBCED00B69501 /* SIMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFAE2941EBEBCED00B69501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9FFAE2961EBEBCED00B69501 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9FFAE2991EBEBCED00B69501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FFAE29B1EBEBCED00B69501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FFAE29E1EBEBCED00B69501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		9FFAE2C41EBF05F400B69501 /* RegistrationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationTableViewController.swift; sourceTree = "<group>"; };
 		9FFAE2C61EBF340000B69501 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		9FFAE2C81EBF357100B69501 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		9FFAE2CA1EBF3ABD00B69501 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		ABB3C461EFFB8C554B871675 /* Pods-SIMS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SIMS/Pods-SIMS.debug.xcconfig"; sourceTree = "<group>"; };
 		ADD66A4BC578177BDD22764D /* Pods_SIMSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9AAD83912E6E9237BE307C /* Pods-SIMSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SIMSTests/Pods-SIMSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,15 +146,15 @@
 			isa = PBXGroup;
 			children = (
 				9FFAE2941EBEBCED00B69501 /* AppDelegate.swift */,
-				9FFAE2961EBEBCED00B69501 /* ViewController.swift */,
+				9FFAE2981EBEBCED00B69501 /* Main.storyboard */,
 				9FFAE2C21EBEC11600B69501 /* LoginTableViewController.swift */,
 				9FFAE2C41EBF05F400B69501 /* RegistrationTableViewController.swift */,
-				9FFAE2981EBEBCED00B69501 /* Main.storyboard */,
+				9FFAE2C61EBF340000B69501 /* Dashboard.storyboard */,
+				9FFAE2C81EBF357100B69501 /* DashboardViewController.swift */,
+				9FFAE2CA1EBF3ABD00B69501 /* LeftMenuViewController.swift */,
 				9FFAE29B1EBEBCED00B69501 /* Assets.xcassets */,
 				9FFAE29D1EBEBCED00B69501 /* LaunchScreen.storyboard */,
 				9FFAE2A01EBEBCED00B69501 /* Info.plist */,
-				9FFAE2C61EBF340000B69501 /* Dashboard.storyboard */,
-				9FFAE2C81EBF357100B69501 /* DashboardViewController.swift */,
 			);
 			path = SIMS;
 			sourceTree = "<group>";
@@ -459,8 +459,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FFAE2971EBEBCED00B69501 /* ViewController.swift in Sources */,
 				9FFAE2951EBEBCED00B69501 /* AppDelegate.swift in Sources */,
+				9FFAE2CB1EBF3ABD00B69501 /* LeftMenuViewController.swift in Sources */,
 				9FFAE2C91EBF357100B69501 /* DashboardViewController.swift in Sources */,
 				9FFAE2C51EBF05F400B69501 /* RegistrationTableViewController.swift in Sources */,
 				9FFAE2C31EBEC11600B69501 /* LoginTableViewController.swift in Sources */,

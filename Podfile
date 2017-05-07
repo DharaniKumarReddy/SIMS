@@ -4,7 +4,7 @@
 target 'SIMS' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
 
-  pod 'ECSlidingViewController', '~> 2.0.3'
+  pod 'SlideMenuControllerSwift'
   pod 'SwiftyJSON'
 
   use_frameworks!
