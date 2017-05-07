@@ -52,13 +52,10 @@ class LoginTableViewController: UITableViewController {
     }
     
     @IBAction private func actionButtonTapped(button: UIButton) {
-        switch button.tag {
-        case 2:
+        if button.tag == 2 {
             logIn()
-        case 3:
-            break
-        default:
-            break
+        } else {
+            
         }
     }
     
@@ -89,11 +86,11 @@ extension TextFieldCell: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.placeholder = ""
-        animateLabel(constraint: 30, leading: textField.tag == 0 && isLogin ? 6 : textField.tag == 4 && !isLogin ? 10 : (textField.tag == 0 || textField.tag == 6) && !isLogin ? 20 : 15)
+        animateLabel(constraint: 30, leading: textField.tag == 0 && isLogin ? 6 : textField.tag == 4 && !isLogin ? 10 : (textField.tag == 0 || textField.tag == 6) && !isLogin ? 20 : textField.tag == 99 ? 0 : 15)
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if textField.text == "" {
+        if textField.text == "" && textField.tag != 99 {
             textField.placeholder = isLogin ? Login_Placeholders[textField.tag] : Registration_Placeholers[textField.tag]
         }
         animateLabel(constraint: 7, leading: 24)

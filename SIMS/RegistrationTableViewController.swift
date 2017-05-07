@@ -9,6 +9,7 @@
 import UIKit
 
 let Registration_Placeholers = ["Name", "Mobile No", "Email ID", "Password", "Re-Password", "Address", "City"]
+
 class RegistrationTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -16,6 +17,10 @@ class RegistrationTableViewController: UITableViewController {
 
         title = "Registration"
         navigationController?.navigationBar.tintColor = UIColor.white
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,13 +56,11 @@ class RegistrationTableViewController: UITableViewController {
     }
     
     @IBAction private func actionButtonTapped(button: UIButton) {
-        switch button.tag {
-        case 7:
-            break
-        case 8:
+        if button.tag == 7 {
+            let checkOTP = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CheckOTPTableViewController") as! CheckOTPTableViewController
+            navigationController?.pushViewController(checkOTP, animated: true)
+        } else {
             navigationController?.popViewController(animated: true)
-        default:
-            break
         }
     }
 }

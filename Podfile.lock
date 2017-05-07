@@ -1,15 +1,18 @@
 PODS:
+  - MBProgressHUD (1.0.0)
   - SlideMenuControllerSwift (3.0.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - MBProgressHUD (~> 1.0.0)
   - SlideMenuControllerSwift
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: f4ff1f1124991a4ba8e1ee68df2c761ca4b42438
+PODFILE CHECKSUM: 645df9ba609dcc1b53ad80ad7417f36756713e0d
 
 COCOAPODS: 1.2.1

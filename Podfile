@@ -6,6 +6,7 @@ target 'SIMS' do
 
   pod 'SlideMenuControllerSwift'
   pod 'SwiftyJSON'
+  pod 'MBProgressHUD', '~> 1.0.0'
 
   use_frameworks!
 
