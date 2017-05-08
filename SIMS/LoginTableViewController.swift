@@ -45,6 +45,7 @@ class LoginTableViewController: UITableViewController {
                 idTextField = cell.textField
             } else {
                 passwordTextField = cell.textField
+                cell.textField.isSecureTextEntry = true
             }
             return cell
         case 4:
@@ -65,19 +66,20 @@ class LoginTableViewController: UITableViewController {
                 emailOrMobile: idTextField?.text,
                 password: passwordTextField?.text,
                 onUserResponse: { member in
-                    self.logIn()
+                    self.logIn(userID: self.idTextField?.text, password: self.passwordTextField?.text)
             }, onError: { message in
                 self.hideHUDWithText(text: message)
             })
-            //logIn()
         } else {
             
         }
     }
     
-    private func logIn() {
+    private func logIn(userID: String?, password: String?) {
         let defaults = UserDefaults.standard
         defaults.set(true, forKey: Keys.LogIn)
+        defaults.set(userID ?? "", forKey: Keys.UserID)
+        defaults.set(password ?? "", forKey: Keys.Password)
         let dashboard = UIStoryboard(name: "Dashboard", bundle: Bundle.main).instantiateInitialViewController() as! DashboardViewController
         let leftViewController = UIStoryboard(name: "Dashboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "LeftMenuViewController") as! LeftMenuViewController
         let slidingViewController = SlideMenuController(mainViewController: dashboard, leftMenuViewController: leftViewController)

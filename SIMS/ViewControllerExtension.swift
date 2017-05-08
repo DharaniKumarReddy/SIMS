@@ -12,13 +12,17 @@ import MBProgressHUD
 extension UIViewController {
     func showHUDWithText(text: String) {
         var hud: MBProgressHUD! = MBProgressHUD(for: view)
-            
         if hud == nil {
             hud = MBProgressHUD.showAdded(to: view, animated: true)
         } else {
             hud.show(animated: true)
         }
-            
+        
+        hud.bezelView.style = .solidColor
+        hud.bezelView.color = RGBA(0, g: 0, b: 205, a: 0.7)
+        hud.backgroundView.style = .solidColor
+        hud.label.textColor = UIColor.white
+        hud.contentColor = UIColor.white
         hud.label.text = text
         view.isUserInteractionEnabled = false
     }

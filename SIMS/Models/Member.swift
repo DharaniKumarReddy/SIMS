@@ -23,3 +23,22 @@ struct Member {
     internal var otp: String?
     internal var status: String?
 }
+
+extension Member {
+    
+    struct Static {
+        static var instance: Member?
+    }
+    
+    static func currentMember() -> Member? {
+        return Static.instance!
+    }
+    
+    static func setCurrentMember(_ member: Member) {
+        Static.instance = member
+    }
+}
+
+func currentMember() -> Member {
+    return Member.currentMember()!
+}

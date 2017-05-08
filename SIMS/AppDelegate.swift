@@ -18,14 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        let defaults = UserDefaults.standard
-//        if defaults.bool(forKey: Keys.LogIn) {
-//            let dashboard = UIStoryboard(name: "Dashboard", bundle: Bundle.main).instantiateInitialViewController() as! DashboardViewController
-//            let leftViewController = UIStoryboard(name: "Dashboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "LeftMenuViewController") as! LeftMenuViewController
-//            let slidingViewController = SlideMenuController(mainViewController: dashboard, leftMenuViewController: leftViewController)
-//            window?.rootViewController = slidingViewController
-//            window?.makeKeyAndVisible()
-//        }
+        let defaults = UserDefaults.standard
+        if defaults.bool(forKey: Keys.LogIn) {
+            let userID = defaults.string(forKey: Keys.UserID)
+            let password = defaults.string(forKey: Keys.Password)
+            APICaller.getInstance().logIn(emailOrMobile: userID, password: password, onUserResponse: { _ in
+                
+            }, onError: { message in
+                UIApplication.topViewController()?.showHUDWithText(text: message)
+            })
+            let dashboard = UIStoryboard(name: "Dashboard", bundle: Bundle.main).instantiateInitialViewController() as! DashboardViewController
+            let leftViewController = UIStoryboard(name: "Dashboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "LeftMenuViewController") as! LeftMenuViewController
+            let slidingViewController = SlideMenuController(mainViewController: dashboard, leftMenuViewController: leftViewController)
+            window?.rootViewController = slidingViewController
+            window?.makeKeyAndVisible()
+        }
         return true
     }
 
@@ -57,4 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 struct Keys {
     static let LogIn = "LoggedIn"
     static let Token = "Token"
+    static let Member = "Member"
+    static let UserID = "UserID"
+    static let Password = "Password"
 }

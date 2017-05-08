@@ -197,7 +197,8 @@ class APICaller {
             params: jsonDict,
             onSuccessResponse: { response in
                 let member = JsonParser.parseMemberInfo(jsonString: response)
-                 onUserResponse(member)
+                Member.setCurrentMember(member)
+                onUserResponse(member)
             }, onErrorMessage: { errorMessage in
                 onError(errorMessage)
         })
