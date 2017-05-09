@@ -11,6 +11,7 @@
 		610674B138D0659A1449E2D3 /* Pods_SIMS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362903B7AF84DD3A528AD6F3 /* Pods_SIMS.framework */; };
 		890953766088D321F6BA64D8 /* Pods_SIMSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD66A4BC578177BDD22764D /* Pods_SIMSTests.framework */; };
 		9F0B0A611EC0CFB6004C23F4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0B0A601EC0CFB6004C23F4 /* MapKit.framework */; };
+		9FDC26021EC14ED00075D38E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC26011EC14ED00075D38E /* FirstViewController.swift */; };
 		9FFAE2951EBEBCED00B69501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE2941EBEBCED00B69501 /* AppDelegate.swift */; };
 		9FFAE29A1EBEBCED00B69501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFAE2981EBEBCED00B69501 /* Main.storyboard */; };
 		9FFAE29C1EBEBCED00B69501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FFAE29B1EBEBCED00B69501 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		362903B7AF84DD3A528AD6F3 /* Pods_SIMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44456AEA7432E2195057F973 /* Pods-SIMSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SIMSTests/Pods-SIMSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F0B0A601EC0CFB6004C23F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9FDC26011EC14ED00075D38E /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		9FFAE2911EBEBCED00B69501 /* SIMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFAE2941EBEBCED00B69501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FFAE2991EBEBCED00B69501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				9FFAE2D81EBF819900B69501 /* Models */,
 				9FFAE2941EBEBCED00B69501 /* AppDelegate.swift */,
 				9FFAE2981EBEBCED00B69501 /* Main.storyboard */,
+				9FDC26011EC14ED00075D38E /* FirstViewController.swift */,
 				9FFAE2C21EBEC11600B69501 /* LoginTableViewController.swift */,
 				9FFAE2C41EBF05F400B69501 /* RegistrationTableViewController.swift */,
 				9FFAE2CC1EBF516D00B69501 /* CheckOTPTableViewController.swift */,
@@ -287,6 +290,7 @@
 				TargetAttributes = {
 					9FFAE2901EBEBCED00B69501 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = RGTN4B5ZHY;
 						ProvisioningStyle = Automatic;
 					};
 					9FFAE2A41EBEBCEE00B69501 = {
@@ -497,6 +501,7 @@
 				9FFAE2D51EBF73D600B69501 /* UIApplicationExtension.swift in Sources */,
 				9FFAE2CF1EBF5F0500B69501 /* ViewControllerExtension.swift in Sources */,
 				9FFAE2C91EBF357100B69501 /* DashboardViewController.swift in Sources */,
+				9FDC26021EC14ED00075D38E /* FirstViewController.swift in Sources */,
 				9FFAE2D31EBF6B3800B69501 /* APICaller.swift in Sources */,
 				9FFAE2CD1EBF516D00B69501 /* CheckOTPTableViewController.swift in Sources */,
 				9FFAE2DA1EBF81D100B69501 /* Member.swift in Sources */,
@@ -656,9 +661,10 @@
 			baseConfigurationReference = ABB3C461EFFB8C554B871675 /* Pods-SIMS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RGTN4B5ZHY;
 				INFOPLIST_FILE = SIMS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sims.SIMS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onlifehealth.AlwaysOnOLHQA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -669,9 +675,10 @@
 			baseConfigurationReference = 0FE9041C93A89154024EDAC4 /* Pods-SIMS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RGTN4B5ZHY;
 				INFOPLIST_FILE = SIMS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sims.SIMS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onlifehealth.AlwaysOnOLHQA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

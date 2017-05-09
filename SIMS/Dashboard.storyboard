@@ -44,11 +44,14 @@
                             </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HsZ-X0-cFh">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dHV-v2-fzh" id="E7W-UH-fOi"/>
+                                </connections>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqp-eB-8VA">
                                 <rect key="frame" x="0.0" y="567" width="375" height="100"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checked" translatesAutoresizingMaskIntoConstraints="NO" id="RaM-Je-QGo">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="RaM-Je-QGo">
                                         <rect key="frame" x="8" y="8" width="16" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="16" id="DyU-u8-ixH"/>
@@ -131,6 +134,13 @@
                                     <constraint firstItem="paw-fe-qNk" firstAttribute="leading" secondItem="RaM-Je-QGo" secondAttribute="trailing" constant="8" id="rak-Qt-EJG"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" placeholder="Search for location" translatesAutoresizingMaskIntoConstraints="NO" id="nTX-0B-DsQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dHV-v2-fzh" id="oDv-LG-rJI"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -139,9 +149,12 @@
                             <constraint firstItem="HsZ-X0-cFh" firstAttribute="top" secondItem="iQ5-WV-O6k" secondAttribute="bottom" id="Umk-wU-UDK"/>
                             <constraint firstItem="iQ5-WV-O6k" firstAttribute="top" secondItem="gP5-XN-5cX" secondAttribute="top" id="WuU-Q4-3zH"/>
                             <constraint firstItem="iQ5-WV-O6k" firstAttribute="leading" secondItem="gP5-XN-5cX" secondAttribute="leading" id="YWF-uw-hFh"/>
+                            <constraint firstItem="nTX-0B-DsQ" firstAttribute="top" secondItem="iQ5-WV-O6k" secondAttribute="bottom" id="cHS-wy-HaX"/>
                             <constraint firstItem="Kqp-eB-8VA" firstAttribute="leading" secondItem="gP5-XN-5cX" secondAttribute="leading" id="fox-PU-Jf8"/>
                             <constraint firstAttribute="trailing" secondItem="Kqp-eB-8VA" secondAttribute="trailing" id="hTn-MR-kdd"/>
+                            <constraint firstAttribute="trailing" secondItem="nTX-0B-DsQ" secondAttribute="trailing" id="kAB-dr-5ZX"/>
                             <constraint firstAttribute="trailing" secondItem="HsZ-X0-cFh" secondAttribute="trailing" id="qJn-S2-NWq"/>
+                            <constraint firstItem="nTX-0B-DsQ" firstAttribute="leading" secondItem="gP5-XN-5cX" secondAttribute="leading" id="rgX-Uq-HGN"/>
                             <constraint firstItem="ER4-z7-KpN" firstAttribute="top" secondItem="HsZ-X0-cFh" secondAttribute="bottom" id="xSo-OX-mSS"/>
                             <constraint firstItem="ER4-z7-KpN" firstAttribute="top" secondItem="Kqp-eB-8VA" secondAttribute="bottom" id="ydS-3H-WZL"/>
                         </constraints>
@@ -149,9 +162,20 @@
                     <connections>
                         <outlet property="checkMarkImageView" destination="RaM-Je-QGo" id="wlN-5c-a5Y"/>
                         <outlet property="filesHeightConstraint" destination="Uai-M3-DLK" id="gCY-7E-z2S"/>
+                        <outlet property="mapView" destination="HsZ-X0-cFh" id="v1I-qw-jQg"/>
+                        <outlet property="searchDisplayController" destination="aQ9-Ej-a1h" id="hEc-Wh-ltZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGo-Qs-TDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="aQ9-Ej-a1h">
+                    <connections>
+                        <outlet property="delegate" destination="dHV-v2-fzh" id="tAD-AW-Hnu"/>
+                        <outlet property="searchBar" destination="nTX-0B-DsQ" id="k79-ql-gGN"/>
+                        <outlet property="searchContentsController" destination="dHV-v2-fzh" id="4QL-8a-KNO"/>
+                        <outlet property="searchResultsDataSource" destination="dHV-v2-fzh" id="G6w-3B-gF2"/>
+                        <outlet property="searchResultsDelegate" destination="dHV-v2-fzh" id="qUd-nw-TGn"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="5.5999999999999996" y="242.42878560719643"/>
         </scene>
@@ -286,9 +310,9 @@
     </scenes>
     <resources>
         <image name="ChangePassword" width="24" height="24"/>
-        <image name="Checked" width="16" height="16"/>
         <image name="EditProfile" width="24" height="24"/>
         <image name="LogOut" width="24" height="24"/>
+        <image name="Unchecked" width="16" height="16"/>
         <image name="ViewProfile" width="24" height="24"/>
         <image name="hamburger" width="20" height="20"/>
     </resources>

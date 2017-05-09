@@ -25,12 +25,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Vvf-i7-Y6N" kind="relationship" relationship="rootViewController" id="Oj1-9O-bYH"/>
+                        <segue destination="ZUU-CB-5fs" kind="relationship" relationship="rootViewController" id="dg4-8t-pSy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNR-i6-J7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="250" y="137"/>
+            <point key="canvasLocation" x="-530" y="142"/>
+        </scene>
+        <!--First View Controller-->
+        <scene sceneID="LfM-I7-ZGS">
+            <objects>
+                <viewController id="ZUU-CB-5fs" customClass="FirstViewController" customModule="SIMS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ho4-5V-dhU"/>
+                        <viewControllerLayoutGuide type="bottom" id="ebI-Ue-B4N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Oa-SU-hFr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MI0-V1-U7I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NRG-dd-AnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="142"/>
         </scene>
         <!--Login Table View Controller-->
         <scene sceneID="Tdg-w9-azy">

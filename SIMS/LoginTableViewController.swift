@@ -87,7 +87,6 @@ class LoginTableViewController: UITableViewController {
         appDelegate.window?.rootViewController = slidingViewController
         appDelegate.window?.makeKeyAndVisible()
     }
-
 }
 
 class TextFieldCell: UITableViewCell {
