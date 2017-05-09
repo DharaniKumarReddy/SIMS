@@ -10,9 +10,13 @@ import UIKit
 
 class LeftMenuViewController: UIViewController {
 
+    
+    @IBOutlet private weak var userLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        userLabel.text = Member.currentMember()?.name
         // Do any additional setup after loading the view.
     }
 

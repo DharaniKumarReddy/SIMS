@@ -10,21 +10,45 @@ import UIKit
 import SlideMenuControllerSwift
 import MapKit
 
+let iPhoneSE   =   UIScreen.main.bounds.height == 568.0
+
 class DashboardViewController: UIViewController {
 
     var locationManager: CLLocationManager?
     
+    var matchingItems:[MKMapItem] = []
+    
+    var searchController: UISearchController!
+    
     @IBOutlet private weak var filesHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var checkMarkImageView: UIImageView!
     @IBOutlet fileprivate weak var mapView: MKMapView!
+    @IBOutlet fileprivate weak var tblSearchResults: UITableView!
+    @IBOutlet fileprivate weak var tableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var tableViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var showFilesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         UIApplication.shared.statusBarStyle = .lightContent
         determineCurrentLocation()
+        configureSearchController()
         //searchDisplayController?.searchResultsTableView.reloadData()
         // Do any additional setup after loading the view.
+    }
+    
+    private func configureSearchController() {
+        // Initialize and perform a minimum configuration to the search controller.
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Enter Patient Pickup Location"
+        searchController.searchBar.delegate = self as UISearchBarDelegate
+        searchController.searchBar.sizeToFit()
+        
+        // Place the search bar view to the tableview headerview.
+        tblSearchResults.tableHeaderView = searchController.searchBar
     }
     
     @IBAction private func leftBarButtonTapped() {
@@ -35,10 +59,10 @@ class DashboardViewController: UIViewController {
         button.isSelected = !button.isSelected
         if button.isSelected {
             checkMarkImageView.image = UIImage(named: "Checked")
-            alterFilesHeight(height: 250)
+            alterFilesHeight(height: iPhoneSE ? 273 : 250)
         } else {
             checkMarkImageView.image = UIImage(named: "Unchecked")
-            alterFilesHeight(height: 150)
+            alterFilesHeight(height: 100)
         }
     }
     
@@ -92,17 +116,56 @@ extension DashboardViewController: MKMapViewDelegate, CLLocationManagerDelegate 
 
 extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return matchingItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchCell
+        
+        let place = matchingItems[indexPath.row].placemark
+        cell.placeLabel.text = place.name
+        
         return cell
     }
 }
 
+extension DashboardViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        tableViewHeightConstraint.priority = 1
+        tableViewBottomConstraint.priority = 999
+        view.layoutIfNeeded()
+        tblSearchResults.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        tableViewHeightConstraint.priority = 999
+        tableViewBottomConstraint.priority = 1
+        view.layoutIfNeeded()
+        tblSearchResults.reloadData()
+    }
+}
+
+//extension DashboardViewController: UISearchControllerDelegate {
+//    
+//}
+//
 extension DashboardViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = searchController.searchBar.text
+        request.region = mapView.region
+        let search = MKLocalSearch(request: request)
+        search.start(completionHandler: { response, _ in
+            guard let response = response else {
+                return
+            }
+            self.matchingItems = response.mapItems
+            //searchDisplayController?.searchResultsTableView.tableView.reloadData()
+            self.tblSearchResults.reloadData()
+        })
     }
+}
+
+class SearchCell: UITableViewCell {
+    @IBOutlet fileprivate weak var placeLabel: UILabel!
 }
