@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SlideMenuControllerSwift
 import MapKit
 
 let iPhoneSE   =   UIScreen.main.bounds.height == 568.0
@@ -121,10 +120,8 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchCell
-        
         let place = matchingItems[indexPath.row].placemark
         cell.placeLabel.text = place.name
-        
         return cell
     }
 }

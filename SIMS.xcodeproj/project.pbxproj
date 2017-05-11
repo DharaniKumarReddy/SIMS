@@ -11,6 +11,7 @@
 		610674B138D0659A1449E2D3 /* Pods_SIMS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362903B7AF84DD3A528AD6F3 /* Pods_SIMS.framework */; };
 		890953766088D321F6BA64D8 /* Pods_SIMSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD66A4BC578177BDD22764D /* Pods_SIMSTests.framework */; };
 		9F0B0A611EC0CFB6004C23F4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0B0A601EC0CFB6004C23F4 /* MapKit.framework */; };
+		9F4780E91EC40FC2008CEEEB /* ViewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4780E81EC40FC2008CEEEB /* ViewProfileViewController.swift */; };
 		9FDC26021EC14ED00075D38E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC26011EC14ED00075D38E /* FirstViewController.swift */; };
 		9FFAE2951EBEBCED00B69501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE2941EBEBCED00B69501 /* AppDelegate.swift */; };
 		9FFAE29A1EBEBCED00B69501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFAE2981EBEBCED00B69501 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		362903B7AF84DD3A528AD6F3 /* Pods_SIMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44456AEA7432E2195057F973 /* Pods-SIMSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SIMSTests/Pods-SIMSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F0B0A601EC0CFB6004C23F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9F4780E81EC40FC2008CEEEB /* ViewProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileViewController.swift; sourceTree = "<group>"; };
 		9FDC26011EC14ED00075D38E /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		9FFAE2911EBEBCED00B69501 /* SIMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFAE2941EBEBCED00B69501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				9FFAE2C61EBF340000B69501 /* Dashboard.storyboard */,
 				9FFAE2C81EBF357100B69501 /* DashboardViewController.swift */,
 				9FFAE2CA1EBF3ABD00B69501 /* LeftMenuViewController.swift */,
+				9F4780E81EC40FC2008CEEEB /* ViewProfileViewController.swift */,
 				9FFAE29B1EBEBCED00B69501 /* Assets.xcassets */,
 				9FFAE29D1EBEBCED00B69501 /* LaunchScreen.storyboard */,
 				9FFAE2A01EBEBCED00B69501 /* Info.plist */,
@@ -507,6 +510,7 @@
 				9FFAE2DA1EBF81D100B69501 /* Member.swift in Sources */,
 				9FFAE2D11EBF667700B69501 /* Route.swift in Sources */,
 				9FFAE2C51EBF05F400B69501 /* RegistrationTableViewController.swift in Sources */,
+				9F4780E91EC40FC2008CEEEB /* ViewProfileViewController.swift in Sources */,
 				9FFAE2D71EBF817D00B69501 /* JsonParser.swift in Sources */,
 				9FFAE2C31EBEC11600B69501 /* LoginTableViewController.swift in Sources */,
 			);

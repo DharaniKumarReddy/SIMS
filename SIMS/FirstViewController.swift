@@ -32,6 +32,7 @@ class FirstViewController: UIViewController {
     private func navigateToDashboard() {
         let dashboard = UIStoryboard(name: "Dashboard", bundle: Bundle.main).instantiateInitialViewController() as! DashboardViewController
         let leftViewController = UIStoryboard(name: "Dashboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "LeftMenuViewController") as! LeftMenuViewController
+        
         let slidingViewController = SlideMenuController(mainViewController: dashboard, leftMenuViewController: leftViewController)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = slidingViewController
