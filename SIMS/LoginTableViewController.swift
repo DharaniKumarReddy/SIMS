@@ -138,3 +138,9 @@ class RegisterCell: UITableViewCell {
 func RGBA(_ r: Int, g: Int, b: Int, a: CGFloat? = 1.0) -> UIColor {
     return UIColor(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: a!)
 }
+
+func contentHeight(fontName:String, fontSize: CGFloat, screenWidth: CGFloat, text: String) -> CGFloat {
+    let font = UIFont.init(name: fontName, size: fontSize)
+    let height = font?.sizeOfString(string: text as NSString, constrainedToWidth: Double(screenWidth)).height ?? 50
+    return height
+}

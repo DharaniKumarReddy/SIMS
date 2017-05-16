@@ -11,6 +11,8 @@ import UIKit
 let Registration_Placeholers = ["Name", "Mobile No", "Email ID", "Password", "Re-Password", "Address", "City"]
 
 class RegistrationTableViewController: UITableViewController {
+    
+    private var textFields: [UITextField] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,17 +52,46 @@ class RegistrationTableViewController: UITableViewController {
             if indexPath.row == 0 {
                 cell.textField.becomeFirstResponder()
             }
+            textFields.append(cell.textField)
             cell.isLogin = false
+            switch indexPath.row {
+            case 1:
+                cell.textField.keyboardType = .numberPad
+            case 2:
+                cell.textField.keyboardType = .emailAddress
+            case 3, 4:
+                cell.textField.isSecureTextEntry = true
+            default:
+                break
+            }
             return cell
         }
     }
     
     @IBAction private func actionButtonTapped(button: UIButton) {
         if button.tag == 7 {
-            let checkOTP = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CheckOTPTableViewController") as! CheckOTPTableViewController
-            navigationController?.pushViewController(checkOTP, animated: true)
+            checkRegistrationFields()
+//            let checkOTP = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CheckOTPTableViewController") as! CheckOTPTableViewController
+//            navigationController?.pushViewController(checkOTP, animated: true)
         } else {
             navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    // MARK:- Private Methods
+    
+    private func checkRegistrationFields() {
+        for textField in textFields {
+            if textField.text == "" {
+                showErrorBanner(message: Registration_Placeholers[textField.tag] + " is required")
+                return
+            }
+        }
+        let passwordTextField = textFields.filter({ $0.tag == 3 }).first
+        let rePasswordTextField = textFields.filter({ $0.tag == 4 }).first
+        if passwordTextField?.text != rePasswordTextField?.text {
+            showErrorBanner(message: "Password and Confirm Password doesn't match")
+            return
         }
     }
 }

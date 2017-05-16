@@ -13,6 +13,9 @@
 		9F0B0A611EC0CFB6004C23F4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0B0A601EC0CFB6004C23F4 /* MapKit.framework */; };
 		9F4780E91EC40FC2008CEEEB /* ViewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4780E81EC40FC2008CEEEB /* ViewProfileViewController.swift */; };
 		9FDC26021EC14ED00075D38E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC26011EC14ED00075D38E /* FirstViewController.swift */; };
+		9FE5D5061ECA95AC00B501B6 /* ErrorMessageBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE5D5041ECA95AC00B501B6 /* ErrorMessageBannerView.swift */; };
+		9FE5D5071ECA95AC00B501B6 /* ErrorMessageBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE5D5051ECA95AC00B501B6 /* ErrorMessageBannerView.xib */; };
+		9FE5D5091ECA976100B501B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE5D5081ECA976100B501B6 /* UIFontExtension.swift */; };
 		9FFAE2951EBEBCED00B69501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE2941EBEBCED00B69501 /* AppDelegate.swift */; };
 		9FFAE29A1EBEBCED00B69501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFAE2981EBEBCED00B69501 /* Main.storyboard */; };
 		9FFAE29C1EBEBCED00B69501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FFAE29B1EBEBCED00B69501 /* Assets.xcassets */; };
@@ -58,6 +61,9 @@
 		9F0B0A601EC0CFB6004C23F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9F4780E81EC40FC2008CEEEB /* ViewProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileViewController.swift; sourceTree = "<group>"; };
 		9FDC26011EC14ED00075D38E /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		9FE5D5041ECA95AC00B501B6 /* ErrorMessageBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorMessageBannerView.swift; path = "Error Banner/ErrorMessageBannerView.swift"; sourceTree = "<group>"; };
+		9FE5D5051ECA95AC00B501B6 /* ErrorMessageBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ErrorMessageBannerView.xib; path = "Error Banner/ErrorMessageBannerView.xib"; sourceTree = "<group>"; };
+		9FE5D5081ECA976100B501B6 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIFontExtension.swift; path = Extensions/UIFontExtension.swift; sourceTree = "<group>"; };
 		9FFAE2911EBEBCED00B69501 /* SIMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFAE2941EBEBCED00B69501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FFAE2991EBEBCED00B69501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,6 +148,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9FE5D5031ECA959B00B501B6 /* Error Banner */ = {
+			isa = PBXGroup;
+			children = (
+				9FE5D5041ECA95AC00B501B6 /* ErrorMessageBannerView.swift */,
+				9FE5D5051ECA95AC00B501B6 /* ErrorMessageBannerView.xib */,
+			);
+			name = "Error Banner";
+			sourceTree = "<group>";
+		};
 		9FFAE2881EBEBCED00B69501 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +182,7 @@
 		9FFAE2931EBEBCED00B69501 /* SIMS */ = {
 			isa = PBXGroup;
 			children = (
+				9FE5D5031ECA959B00B501B6 /* Error Banner */,
 				9FFAE2D81EBF819900B69501 /* Models */,
 				9FFAE2941EBEBCED00B69501 /* AppDelegate.swift */,
 				9FFAE2981EBEBCED00B69501 /* Main.storyboard */,
@@ -186,6 +202,7 @@
 				9FFAE2D01EBF667700B69501 /* Route.swift */,
 				9FFAE2D21EBF6B3800B69501 /* APICaller.swift */,
 				9FFAE2D61EBF817D00B69501 /* JsonParser.swift */,
+				9FE5D5081ECA976100B501B6 /* UIFontExtension.swift */,
 			);
 			path = SIMS;
 			sourceTree = "<group>";
@@ -336,6 +353,7 @@
 				9FFAE29F1EBEBCED00B69501 /* LaunchScreen.storyboard in Resources */,
 				9FFAE29C1EBEBCED00B69501 /* Assets.xcassets in Resources */,
 				9FFAE29A1EBEBCED00B69501 /* Main.storyboard in Resources */,
+				9FE5D5071ECA95AC00B501B6 /* ErrorMessageBannerView.xib in Resources */,
 				9FFAE2C71EBF340000B69501 /* Dashboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,7 +517,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FE5D5061ECA95AC00B501B6 /* ErrorMessageBannerView.swift in Sources */,
 				9FFAE2951EBEBCED00B69501 /* AppDelegate.swift in Sources */,
+				9FE5D5091ECA976100B501B6 /* UIFontExtension.swift in Sources */,
 				9FFAE2CB1EBF3ABD00B69501 /* LeftMenuViewController.swift in Sources */,
 				9FFAE2D51EBF73D600B69501 /* UIApplicationExtension.swift in Sources */,
 				9FFAE2CF1EBF5F0500B69501 /* ViewControllerExtension.swift in Sources */,
